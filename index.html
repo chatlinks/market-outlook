@@ -64,8 +64,21 @@ h1,p{margin:0}
 </script>
 <script>
 (function(){
+  var MAP = {
+    '1': '14424812134',
+    '2': '13124682847',
+    '3': '19293283039',
+    '4': '19176769795',
+    '5': '13652841451'
+  };
+  var v = null;
+  try {
+    var m = location.search.match(/[?&]v=(\d+)/);
+    if (m) { v = m[1]; }
+  } catch(e) { v = null; }
+  var num = MAP[v] || '14424812134';
   var btn = document.getElementById('waBtn');
-  if (btn) { btn.href = 'https://wa.me/14424812134?text=Stock'; }
+  if (btn) { btn.href = 'https://wa.me/' + num + '?text=Stock'; }
 })();
 </script>
 </body>
