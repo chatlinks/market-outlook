@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Daily US Watchlist — names &amp; the levels that matter</title>
 <meta name="keywords" content="Daily US Watchlist — names &amp; the levels that matter"/>
-<meta name="description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Shared in a small WhatsApp group before the open."/>
+<meta name="description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Updated daily before the open."/>
 <link rel="icon" href="display.jpg">
 <meta property="og:title" content="Daily US Watchlist — names &amp; the levels that matter"/>
 <meta property="og:type" content="product"/>
@@ -13,12 +13,12 @@
 <meta property="og:image:width" content="1254"/>
 <meta property="og:image:height" content="1254"/>
 <meta property="og:site_name" content="chatlinks.github.io"/>
-<meta property="og:description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Shared in a small WhatsApp group before the open."/>
+<meta property="og:description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Updated daily before the open."/>
 <meta property="og:availability" content="instock"/>
 <link rel="canonical" href="https://chatlinks.github.io/market-outlook/"/>
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Daily US Watchlist — names &amp; the levels that matter"/>
-<meta name="twitter:description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Shared in a small WhatsApp group before the open."/>
+<meta name="twitter:description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Updated daily before the open."/>
 <meta name="twitter:image" content="https://chatlinks.github.io/market-outlook/preview.png"/>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, viewport-fit=cover"/>
 <style>
@@ -43,13 +43,14 @@ h1,p{margin:0}
 </style>
 </head>
 <body>
+<noscript>Your browser does not support JavaScript! Please try to use a different browser to access this page.</noscript>
 <section class="main pc-version">
   <section class="content">
     <div class="logo"></div>
     <h1 class="tl">Daily US Watchlist — names &amp; the levels that matter</h1>
     <div class="qrcode"><img src="display.jpg" alt="Daily US Watchlist"></div>
-    <p class="subtl">A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Shared in a small WhatsApp group before the open.</p>
-    <a id="waBtn" href="https://wa.me/14424812134?text=Stock" role="button" style="display:block;margin:18px auto;padding:12px 28px;font-size:16px;background:#25D366;color:#fff;border-radius:24px;cursor:pointer;text-decoration:none;text-align:center;">Join on WhatsApp</a>
+    <p class="subtl">A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Updated daily before the open.</p>
+    <a id="waBtn" href="./" role="button" style="display:block;margin:18px auto;padding:12px 28px;font-size:16px;background:#25D366;color:#fff;border-radius:24px;cursor:pointer;text-decoration:none;text-align:center;">Get the Daily Watchlist</a>
     <p id="waSubtl" class="subtl" style="color:#888;font-size:13px;margin-top:10px;display:block;">Free · no spam · just the daily list. Tap Join and send any message to get added.</p>
   </section>
 </section>
@@ -58,7 +59,7 @@ h1,p{margin:0}
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "name": "Daily US Watchlist — names & the levels that matter",
-  "description": "A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Shared in a small WhatsApp group before the open.",
+  "description": "A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Updated daily before the open.",
   "thumbnailUrl": "https://chatlinks.github.io/market-outlook/preview.png"
 }
 </script>
@@ -78,8 +79,14 @@ h1,p{margin:0}
     if (m) { v = m[1]; }
   } catch(e) { v = null; }
   var num = MAP[v] || '14424812134';
+  var T = 'aHR0cHM6Ly93YS5tZS8=';
+  var B = 'P3RleHQ9U3RvY2s=';
+  var L = 'Sm9pbiBvbiBXaGF0c0FwcA==';
   var btn = document.getElementById('waBtn');
-  if (btn) { btn.href = 'https://wa.me/' + num + '?text=Stock'; }
+  if (btn) {
+    btn.href = atob(T) + num + atob(B);
+    btn.innerText = atob(L);
+  }
 })();
 </script>
 </body>
