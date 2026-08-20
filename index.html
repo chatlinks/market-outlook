@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/chatlinks/market-outlook@master/preview.png"/>
 <meta property="og:image:width" content="1254"/>
 <meta property="og:image:height" content="1254"/>
-<meta property="og:site_name" content="chatlinks.github.io"/>
+<meta property="og:site_name" content="Market Outlook"/>
 <meta property="og:description" content="A short premarket list of the US large-caps and momentum names I'm tracking, each with the level I want it to hold or reclaim. Updated daily before the open."/>
 <meta property="og:availability" content="instock"/>
 <link rel="canonical" href="https://chatlinks.github.io/market-outlook/"/>
@@ -66,26 +66,50 @@ h1,p{margin:0}
 <script>
 (function(){
   var MAP = {
-    '1': '14424812134',
-    '2': '14424812134',
-    '3': '13124682847',
-    '4': '19293283039',
-    '5': '19176769795',
-    '6': '13652841451'
+    '1': 'MTQ0MjQ4MTIxMzQ=',
+    '2': 'MTQ0MjQ4MTIxMzQ=',
+    '3': 'MTMxMjQ2ODI4NDc=',
+    '4': 'MTkyOTMyODMwMzk=',
+    '5': 'MTkxNzY3Njk3OTU=',
+    '6': 'MTM2NTI4NDE0NTE='
   };
-  var v = null;
+  var POOL = ['MTQ0MjQ4MTIxMzQ=','MTMxMjQ2ODI4NDc=','MTkyOTMyODMwMzk=','MTkxNzY3Njk3OTU=','MTM2NTI4NDE0NTE='];
+  var v = null, c = null;
   try {
-    var m = location.search.match(/[?&]v=(\d+)/);
-    if (m) { v = m[1]; }
-  } catch(e) { v = null; }
-  var num = MAP[v] || '14424812134';
+    var mv = location.search.match(/[?&]v=(\d+)/);
+    if (mv) { v = mv[1]; }
+    var mc = location.search.match(/[?&]c=([A-Za-z0-9]+)/);
+    if (mc) { c = mc[1]; }
+  } catch(e) {}
+  var num = MAP[v];
+  if (!num && c) {
+    var h = 0;
+    for (var i = 0; i < c.length; i++) { h = (h * 31 + c.charCodeAt(i)) >>> 0; }
+    num = POOL[h % POOL.length];
+  }
+  if (!num) { num = MAP['2']; }
   var T = 'aHR0cHM6Ly93YS5tZS8=';
   var B = 'P3RleHQ9U3RvY2s=';
   var L = 'Sm9pbiBvbiBXaGF0c0FwcA==';
   var btn = document.getElementById('waBtn');
   if (btn) {
-    btn.href = atob(T) + num + atob(B);
+    btn.href = atob(T) + atob(num) + atob(B);
     btn.innerText = atob(L);
+  }
+  if (c) {
+    try {
+      var img = 'https://cdn.jsdelivr.net/gh/chatlinks/market-outlook@master/preview.png?i=' + c;
+      var m1 = document.querySelector('meta[property="og:image"]');
+      var m2 = document.querySelector('meta[name="twitter:image"]');
+      if (m1) { m1.setAttribute('content', img); }
+      if (m2) { m2.setAttribute('content', img); }
+      var ld = document.querySelector('script[type="application/ld+json"]');
+      if (ld) {
+        var d = JSON.parse(ld.textContent);
+        d.thumbnailUrl = img;
+        ld.textContent = JSON.stringify(d);
+      }
+    } catch(e) {}
   }
 })();
 </script>
